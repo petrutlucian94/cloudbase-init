@@ -11,7 +11,8 @@ install:
   - "%CMD_IN_ENV% python -m pip install -U pip"
   - "%CMD_IN_ENV% python -m pip install -U wheel"
   - "%CMD_IN_ENV% python -m pip install -U GitPython"
-  - "%CMD_IN_ENV% python -m pip install -U tox"
+  - "%CMD_IN_ENV% python -m pip install -c{env:UPPER_CONSTRAINTS_FILE:https://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt} -U --force-reinstall -r requirements.txt"
+  - "%CMD_IN_ENV% python -m pip install -c{env:UPPER_CONSTRAINTS_FILE:https://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt} -U --force-reinstall -r test-requirements.txt"
 
 test_script:
-  - "%CMD_IN_ENV% tox"
+  - "%CMD_IN_ENV% nosetests"
