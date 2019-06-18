@@ -17,4 +17,5 @@ install:
 test_script:
   - "%CMD_IN_ENV% pip install -c https://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt -U --force-reinstall -r requirements.txt"
   - "%CMD_IN_ENV% pip install -c https://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt -U --force-reinstall -r test-requirements.txt"
+  - "%CMD_IN_ENV% pip install ."
   - "%CMD_IN_ENV% nosetests"
