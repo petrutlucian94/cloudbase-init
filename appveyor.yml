@@ -1,0 +1,12 @@
+environment:
+  matrix:
+  - TOXENV: py27
+  - TOXENV: py35
+
+build: off
+
+install:
+- pip install tox
+
+test_script:
+- tox
