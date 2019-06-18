@@ -9,6 +9,7 @@ install:
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
   - "python --version"
   - "%CMD_IN_ENV% python -m pip install -U pip"
+  - "%CMD_IN_ENV% python -m pip install -U git"
   - "%CMD_IN_ENV% python -m pip install -U tox"
 
 test_script:
