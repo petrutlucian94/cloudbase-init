@@ -13,6 +13,6 @@ install:
   - "%CMD_IN_ENV% python -m pip install -U GitPython"
 
 test_script:
-  - "%CMD_IN_ENV% python -m pip install -c{env:UPPER_CONSTRAINTS_FILE:https://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt} -U --force-reinstall -r requirements.txt"
-  - "%CMD_IN_ENV% python -m pip install -c{env:UPPER_CONSTRAINTS_FILE:https://git.openstack.org/cgit/openstack/requirements/plain/upper-constraints.txt} -U --force-reinstall -r test-requirements.txt"
+  - "%CMD_IN_ENV% pip install -U --force-reinstall -r requirements.txt"
+  - "%CMD_IN_ENV% pip install -U --force-reinstall -r test-requirements.txt"
   - "%CMD_IN_ENV% nosetests"
