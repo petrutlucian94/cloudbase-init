@@ -1,12 +1,15 @@
 environment:
   matrix:
-  - TOXENV: py27
-  - TOXENV: py35
+    - PYTHON: "C:\\Python35"
+      PYTHON_VERSION: "3.5"
 
 build: off
 
 install:
-- pip install tox
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+  - "python --version"
+  - "%CMD_IN_ENV% python -m pip install -U pip"
+  - "%CMD_IN_ENV% python -m pip install -U tox"
 
 test_script:
-- tox
+  - "%CMD_IN_ENV% tox"
